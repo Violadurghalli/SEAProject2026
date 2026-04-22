@@ -1,30 +1,64 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>vi's library!</title>
+    <meta name="description" content="A Catalog of Viola's favorite books." />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js" defer></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">vi's library!</h1>
     </header>
+
+    <div id="Intro">
+      Welcome to my digital bookshelf! Reading has always been a hobby of mine,
+      and this library is a collection of my all-time favorite reads. Enjoy!
+    </div>
+    <fieldset id="search-wrapper">
+      <label for="search"> Search Books: </label>
+      <input type=" search" id="search" />
+    </fieldset>
+
+    <fieldset id="sort-container">
+      <span class="sort-label">Sort by:</span>
+
+      <label>
+        <input type="radio" value="title" name="sort" id="title" /> A-Z
+        Title</label
+      >
+      <label>
+        <input type="radio" value="author" name="sort" id="author" /> A-Z
+        Author</label
+      >
+
+      <label>
+        <input type="radio" value="year" name="sort" id="year" /> By Year</label
+      >
+    </fieldset>
+
     <div id="card-container"></div>
+
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <h2>Book Title</h2>
+        <div>
+          <span>
+            <img src="" alt="Book Cover" />
+          </span>
+          <span>
+            <ul>
+              <li>Published: <span class="published"></span></li>
+              <li>Author: <span class="author"></span></li>
+              <li>Genre: <span class="genre"></span></li>
+            </ul>
+          </span>
+        </div>
       </div>
     </div>
     <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
+      <button onclick="contact()">Contact Me!</button>
       <button onclick="removeLastCard()">Remove A Card!</button>
     </div>
   </body>
