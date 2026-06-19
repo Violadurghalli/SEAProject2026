@@ -240,8 +240,10 @@ document.addEventListener("DOMContentLoaded", () => {
 const sortOptions = document.getElementById("sort-container"); // sort-container holds the radio buttons
 sortOptions.addEventListener("change", sortCards); // execute when one of the radio buttons has been clicked
 
-const searchInput = document.querySelector("#search");
 
+
+
+const searchInput = document.querySelector("#search");
 searchInput.addEventListener("input", (event) => {
   // lambda is c++ is a call back in JS
   let text = event.target.value.toLowerCase();
@@ -255,6 +257,24 @@ searchInput.addEventListener("input", (event) => {
   });
   showCards(newTitles);
 }); //
+
+const reverseSearchInput = document.querySelector("#reverse-search"); // This is the id for the reverse search input
+// this is one is the one I made
+reverseSearchInput.addEventListener("input", (event) => {
+ // lambda is c++ is a call back in JS
+let text = event.target.value.toLowerCase();
+  let newTitles = titles.filter((obj) => {
+    return (
+      !obj.title.toLowerCase().includes(text) &&
+      !obj.author.toLowerCase().includes(text) &&
+      !obj.published.toLowerCase().includes(text) &&
+      !obj.genre.toLowerCase().includes(text)
+    );
+  });
+  showCards(newTitles);
+}); //
+
+
 
 function sortCards() {
   //find the buttons
@@ -287,3 +307,4 @@ function removeLastCard() {
 function updatePopUp(currentTarget) {
   window.location.href;
 }
+
